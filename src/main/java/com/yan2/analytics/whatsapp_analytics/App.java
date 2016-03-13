@@ -30,7 +30,7 @@ import org.elasticsearch.common.xcontent.XContentBuilder;
 public class App {
 
 	public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat(
-			"yyyyMMM' 'd' 'H:m", new Locale("ES"));
+			"dd/MM/yyyy', 'H:m");
 
 	public static final SimpleDateFormat HOUR_OF_DAY = new SimpleDateFormat("H");
 
@@ -81,7 +81,7 @@ public class App {
 				String message = m.group(3);
 
 				try {
-					Date date = DATE_FORMAT.parse("2015" + dateStr);
+					Date date = DATE_FORMAT.parse(dateStr);
 
 					XContentBuilder json = jsonBuilder()
 							.startObject()
